@@ -8,7 +8,10 @@ type isRouteActive = boolean;
 
 type RouteConfig = Array<[string, JSX.Element, isRouteActive]>;
 
-const pageRoutes: RouteConfig = [["/", <HomePage />, true]];
+const pageRoutes: RouteConfig = [
+  ["/", <HomePage />, true],
+  ["/details", <HomePage />, true],
+];
 
 export default function AppRoutes() {
   return (

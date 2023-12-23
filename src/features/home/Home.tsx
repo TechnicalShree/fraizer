@@ -8,19 +8,13 @@ export default function Home() {
     // @ts-expect-error
     if (!document.getElementById("map")?._leaflet_id) {
       const map = L.map("map").setView([37.75, -85.7], 8);
-      const layer = L.tileLayer(
-        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          maxZoom: 19,
-        }
-      );
-      map.addLayer(layer);
 
       // @ts-expect-error
       const geoJsonLayer = L.geoJson(kentuckyGeoJson, {
         style: {
-          fillOpacity: 0.7,
-          color: "green",
+          fillOpacity: 1,
+          color: "#000",
+          fillColor: "#fff",
         },
       });
       geoJsonLayer.addTo(map);
