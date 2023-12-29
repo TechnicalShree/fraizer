@@ -25,7 +25,16 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       return <ErrorPage />;
     }
 
-    return this.props.children;
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+        }}
+      >
+        {this.props.children}
+      </div>
+    );
   }
 }
 
