@@ -1,5 +1,11 @@
-import { createTheme } from "@mui/material/styles";
+import { PaletteColor, createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
+
+const { palette } = createTheme();
+const { augmentColor } = palette;
+
+const createColor = (mainColor: string): PaletteColor =>
+  augmentColor({ color: { main: mainColor } });
 
 // A custom theme for this app
 const theme = createTheme({
@@ -13,6 +19,7 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    ctaPrimary: createColor("#404040"),
   },
   components: {
     MuiTypography: {

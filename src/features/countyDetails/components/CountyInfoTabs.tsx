@@ -1,21 +1,36 @@
 import { Button, ButtonGroup, Stack } from "@mui/material";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import DetailStory from "./DetailStory";
 import VideoStory from "./VideoStory";
 import CountySong from "./CountySong";
 
-export default function CountyInfoTabs() {
-  const [selectedTab, setSelectedTab] = useState(1);
+type CountyInfoTabsProps = {
+  selectedTab: number;
+  setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export default function CountyInfoTabs({
+  selectedTab,
+  setSelectedTab,
+}: CountyInfoTabsProps) {
   const params = useParams();
   const countyName = params.name || "";
-  const storyTitle = "Danny Little Bear";
+
+  const sampleData = {
+    storyTitle: "Danny Little Bear",
+    description: "",
+    imageDetails: {
+      imgUrl: "",
+      desc: "",
+    },
+  };
 
   const buttons = useMemo(() => {
     const btnArr = [
       {
         id: "story",
-        label: storyTitle,
+        label: sampleData.storyTitle,
       },
       {
         id: "video",
@@ -45,12 +60,18 @@ export default function CountyInfoTabs() {
         {label}
       </Button>
     ));
-  }, [countyName, selectedTab]);
+  }, [countyName, sampleData.storyTitle, selectedTab, setSelectedTab]);
 
   return (
     <Stack flex={1}>
       <Stack flex={1}>
-        {selectedTab === 1 && <DetailStory />}
+        {selectedTab === 1 && (
+          <DetailStory
+            storyTitle={sampleData.storyTitle}
+            description={sampleData.description}
+            imageDetails={sampleData.imageDetails}
+          />
+        )}
         {selectedTab === 2 && <VideoStory />}
         {selectedTab === 3 && <CountySong />}
       </Stack>
