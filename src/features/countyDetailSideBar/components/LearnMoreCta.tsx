@@ -2,11 +2,15 @@ import { ArrowForwardIosRounded } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import React from "react";
 import { useAppContext } from "../../../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
 
 export default function LearnMoreCta() {
   const { state } = useAppContext();
+  const navigate = useNavigate();
 
-  const learnMoreCtaHandler = () => {};
+  const learnMoreCtaHandler = () => {
+    navigate(`/county/${state.county.name}`);
+  };
 
   return (
     <Box>

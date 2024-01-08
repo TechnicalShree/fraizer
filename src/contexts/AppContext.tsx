@@ -7,13 +7,40 @@ import {
   useReducer,
 } from "react";
 
-export const initialState = {
+// Define interfaces for your state
+interface County {
+  name: string;
+  id: string;
+}
+
+interface CountyDetailsModal {
+  isOpen: boolean;
+}
+
+interface TagFilter {
+  isApplied: boolean;
+  appliedOption: string;
+  appliedCounties: string[];
+}
+
+interface AppState {
+  county: County;
+  countyDetailsModal: CountyDetailsModal;
+  tagFilter: TagFilter;
+}
+
+export const initialState: AppState = {
   county: {
     name: "",
     id: "",
   },
   countyDetailsModal: {
     isOpen: false,
+  },
+  tagFilter: {
+    isApplied: false,
+    appliedOption: "",
+    appliedCounties: [],
   },
 };
 
@@ -35,6 +62,8 @@ export const actionTypes = Object.freeze(
     RESET_COUNTY: "RESET_COUNTY",
     OPEN_COUNTY_DETAILS: "OPEN_COUNTY_DETAILS",
     CLOSE_COUNTY_DETAILS: "CLOSE_COUNTY_DETAILS",
+    APPLY_TAG_FILTER: "APPLY_TAG_FILTER",
+    REMOVE_TAG_FILTER: "REMOVE_TAG_FILTER",
   })
 );
 
@@ -84,6 +113,28 @@ const reducer = (
           isOpen: false,
         },
       };
+
+    case actionTypes.APPLY_TAG_FILTER:
+      return {
+        ...state,
+        tagFilter: {
+          ...state.tagFilter,
+          isApplied: true,
+          appliedOption: action.payload.appliedOption,
+          appliedCounties: action.payload.appliedCounties,
+        },
+      };
+    case actionTypes.REMOVE_TAG_FILTER:
+      return {
+        ...state,
+        tagFilter: {
+          ...state.tagFilter,
+          isApplied: false,
+          appliedOption: "",
+          appliedCounties: [],
+        },
+      };
+
     default:
       return state;
   }

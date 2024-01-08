@@ -8,17 +8,31 @@ const theme = createTheme({
       main: "#6a6a6a",
     },
     secondary: {
-      main: "#19857b",
+      main: "#ebebeb",
     },
     error: {
       main: red.A400,
     },
   },
   components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: "#6a6a6a",
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: "none",
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        colorSecondary: {
+          color: "#6a6a6a",
         },
       },
     },

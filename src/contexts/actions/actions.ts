@@ -16,3 +16,15 @@ export const openCountyDetailModal = () => ({
 export const closeCountyDetailModal = () => ({
   type: actionTypes.CLOSE_COUNTY_DETAILS,
 });
+
+export const setTagFilters = (option: string, counties: string[]) => ({
+  type: actionTypes.APPLY_TAG_FILTER,
+  payload: {
+    appliedOption: option,
+    appliedCounties: counties,
+  },
+});
+
+export const resetTagFilters = () => ({
+  type: actionTypes.REMOVE_TAG_FILTER,
+});

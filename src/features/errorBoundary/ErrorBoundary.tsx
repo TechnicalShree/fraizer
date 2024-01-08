@@ -29,7 +29,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
       <div
         style={{
           width: "100%",
-          height: "100vh",
+          // only for developement purpose otherwise it should be 100%
+          height: "840px",
         }}
       >
         {this.props.children}

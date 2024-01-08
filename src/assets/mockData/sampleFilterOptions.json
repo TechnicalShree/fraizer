@@ -1,0 +1,52 @@
+[
+  {
+    "label": "Sports",
+    "value": "sports",
+    "counties": ["Jefferson", "Fayette", "Kenton"]
+  },
+  {
+    "label": "Natural",
+    "value": "natural",
+    "counties": ["Powell", "Edmonson", "Whitley", "Trigg"]
+  },
+  {
+    "label": "Traditions",
+    "value": "traditions",
+    "counties": ["Jefferson", "Fayette", "Bourbon", "Madison"]
+  },
+  {
+    "label": "Entertaining",
+    "value": "entertaining",
+    "counties": ["Jefferson", "Fayette", "Boone"]
+  },
+  {
+    "label": "Firsts",
+    "value": "firsts",
+    "counties": ["Jefferson", "Fayette", "Warren", "Barren", "Christian"]
+  },
+  {
+    "label": "Divers Stories",
+    "value": "divers-stories",
+    "counties": ["Jefferson", "Adair", "Pike", "Fayette", "Harlan", "Rowan"]
+  },
+  {
+    "label": "Notable Figures",
+    "value": "notable-figures",
+    "counties": ["Jefferson", "Hardin", "Caldwell", "Hart", "Woodford"]
+  },
+  {
+    "label": "Tourism",
+    "value": "tourism",
+    "counties": ["Jefferson", "Boone", "Hardin", "Fayette", "Warren", "Hopkins"]
+  },
+  {
+    "label": "Legend and Folklore",
+    "value": "legend-and-folklore",
+    "counties": ["Jefferson", "Edmonson", "Adams"]
+  },
+  {
+    "label": "Production & Agriculture",
+    "value": "production-and-agriculture",
+    "counties": ["Christian", "Shelby", "Bourbon", "Warren", "Henderson"]
+  }
+]

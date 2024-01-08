@@ -1,30 +1,23 @@
 import { Box, Stack } from "@mui/material";
-import InteractiveMap from "./InteractiveMap";
+import InteractiveMap from "../map/InteractiveMap";
 import SideMenu from "../SideMenu/SideMenu";
 import CountyDetailSideBar from "../countyDetailSideBar/CountyDetailSideBar";
-import { useAppContext } from "../../contexts/AppContext";
-import { useEffect, useState } from "react";
-// import ChipFilter from "../chipFilter/ChipFilter";
+import ChipFilter from "../chipFilter/ChipFilter";
+import Intro from "./Intro";
 
 export default function Home() {
-  const [resetMap, setResetMap] = useState(false);
-  const { state } = useAppContext();
-
-  useEffect(() => {
-    if (state.countyDetailsModal.isOpen) return;
-    setResetMap((prev) => !prev);
-  }, [state.countyDetailsModal.isOpen]);
-
   return (
-    <Stack direction="row" sx={{ width: 1, height: 1 }}>
+    <Stack direction="row" position="relative" sx={{ width: 1, height: 1 }}>
       <Box
+        position="relative"
         sx={{
-          width: 4 / 5,
-          height: 4 / 5,
+          flex: 1,
+          height: 1,
         }}
       >
-        <InteractiveMap key={`${resetMap}`} />
-        {/* <ChipFilter /> */}
+        <Intro />
+        <InteractiveMap />
+        <ChipFilter />
       </Box>
       <SideMenu />
       <CountyDetailSideBar />

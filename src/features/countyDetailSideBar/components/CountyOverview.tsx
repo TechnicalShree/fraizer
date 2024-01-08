@@ -14,13 +14,13 @@ export default function CountyOverview({
 }: CountyOverviewProps) {
   return (
     <Stack>
-      <Typography variant="h4" color="primary" sx={{ fontSize: 18 }}>
+      <Typography variant="h4" sx={{ fontSize: 18 }}>
         Founded: {founded}
       </Typography>
-      <Typography variant="h4" color="primary" sx={{ fontSize: 18 }}>
+      <Typography variant="h4" sx={{ fontSize: 18 }}>
         Named for: {namedFor}
       </Typography>
-      <Typography variant="h4" color="primary" sx={{ fontSize: 18 }}>
+      <Typography variant="h4" sx={{ fontSize: 18 }}>
         Largest city: {largestCity}
       </Typography>
     </Stack>
